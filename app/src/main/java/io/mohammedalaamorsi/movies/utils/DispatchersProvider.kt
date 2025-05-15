@@ -3,10 +3,10 @@ package io.mohammedalaamorsi.movies.utils
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 
-class DispatchersProvider {
-    val immediate: CoroutineDispatcher = Dispatchers.Main.immediate
-    val main: CoroutineDispatcher = Dispatchers.Main
-    val io: CoroutineDispatcher = Dispatchers.IO
-    val default: CoroutineDispatcher = Dispatchers.Default
-    val unconfined: CoroutineDispatcher = Dispatchers.Unconfined
+open class DispatchersProvider {
+    open val immediate: CoroutineDispatcher get() = Dispatchers.Main.immediate
+    open val main: CoroutineDispatcher get() = Dispatchers.Main
+    open val io: CoroutineDispatcher get() = Dispatchers.IO
+    open val default: CoroutineDispatcher get() = Dispatchers.Default
+    open val unconfined: CoroutineDispatcher get() = Dispatchers.Unconfined
 }
