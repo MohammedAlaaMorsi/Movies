@@ -1,6 +1,5 @@
-package io.mohammedalaamorsi.movies.ui.theme
+package io.mohammedalaamorsi.movies.presentation.theme
 
-import android.app.Activity
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme

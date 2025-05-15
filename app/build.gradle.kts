@@ -1,3 +1,5 @@
+import com.android.build.gradle.internal.cxx.configure.gradleLocalProperties
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
@@ -6,6 +8,9 @@ plugins {
     alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.kotlin.parcelize)
 }
+
+
+val props = gradleLocalProperties(projectRootDir = rootDir, providers = project.providers)
 
 android {
     namespace = "io.mohammedalaamorsi.movies"
@@ -19,6 +24,16 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField(
+            "String",
+            "API_TOKEN",
+            "\"${props["API_TOKEN"]}\""
+        )
+        buildConfigField(
+            "String",
+            "IMAGE_BASE_URL",
+            "\"${props["IMAGE_BASE_URL"]}\""
+        )
     }
 
     buildTypes {
@@ -28,6 +43,7 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+
         }
     }
     compileOptions {
@@ -39,6 +55,7 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
 }
 
@@ -52,12 +69,16 @@ dependencies {
     implementation(libs.androidx.activity.compose)
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.ui)
+    implementation(libs.androidx.ui.foundation)
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
+    implementation(libs.androidx.material)
     implementation(libs.androidx.material3)
+    implementation(libs.androidx.navigation.compose.android)
     implementation (libs.kotlinx.coroutines.android)
     implementation(libs.koin.android)
     implementation (libs.koin.androidx.compose)
+    implementation(libs.coil.compose)
     implementation(platform(libs.ktor.bom))
     implementation(libs.ktor.client.android)
     implementation(libs.ktor.client.serialization)

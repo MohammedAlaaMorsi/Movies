@@ -1,4 +1,4 @@
-package io.mohammedalaamorsi.movies.ui.theme
+package io.mohammedalaamorsi.movies.presentation.theme
 
 import androidx.compose.ui.graphics.Color
 

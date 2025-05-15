@@ -1,3 +1,21 @@
 <resources>
     <string name="app_name">Movies</string>
+    <string name="no_movies_found">No Movies Found!</string>
+    <string name="no_result">No Result!</string>
+    <string name="search_movies">Search Movies</string>
+    <string name="in_watchlist">In Watchlist</string>
+    <string name="add_to_watchlist">Add to Watchlist</string>
+    <string name="remove_from_watchlist">Remove from Watchlist</string>
+    <string name="unknown_year">Unknown Year</string>
+    <string name="overview">Overview</string>
+    <string name="movie_added_to_watchlist">Movie added to watchlist</string>
+    <string name="movie_removed_from_watchlist">Movie removed from watchlist</string>
+    <string name="top_cast_crew"><![CDATA[Top Cast & Crew]]></string>
+    <string name="top_directors">Top Directors</string>
+    <string name="top_actors">Top Actors</string>
+    <string name="no_cast_information_available">No cast information available</string>
+    <string name="failed_to_load_movie_details">Failed to load movie details</string>
+    <string name="failed_to_load_similar_movies">Failed to load similar movies</string>
+    <string name="empty_string"/>
+
 </resources>
